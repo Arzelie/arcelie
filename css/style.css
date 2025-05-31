@@ -128,3 +128,39 @@ p {
 .btn-secondary:hover {
   background: darken(var(--secondary-color), 10%);
 }
+
+/* css/style.css (updated) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .col-4, .col-6 {
+    grid-column: span 12;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
