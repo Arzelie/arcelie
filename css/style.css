@@ -164,3 +164,9 @@ p {
     align-items: center;
   }
 }
+
+/* css/style.css (updated for active nav link) */
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid var(--primary-color);
+}
