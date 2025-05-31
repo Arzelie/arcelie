@@ -1,172 +1,290 @@
-/* css/style.css (updated) */
+/* Modernized and enhanced styles for Arcelie website */
 
-/* css/style.css (updated) */
+/* Root variables for consistent theming */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --accent-color: #28a745;
+  --text-color: #2d3748;
+  --background-color: #f7fafc;
+  --light-gray: #edf2f7;
+  --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+  color: var(--text-color);
+  background: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header */
 header {
-  background: #333;
-  color: white;
-  padding: 1rem;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 nav a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
-}
-
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-.btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
   font-size: 1rem;
-  transition: background 0.3s;
+  transition: color 0.3s;
 }
 
-.btn-primary {
-  background: #007bff;
-  color: white;
+nav a:hover {
+  color: var(--primary-color);
 }
 
-.btn-primary:hover {
-  background: #0056b3;
+nav a.active {
+  color: var(--primary-color);
+  font-weight: 600;
+  border-bottom: 2px solid var(--primary-color);
 }
 
-.btn-secondary {
-  background: #6c757d;
-  color: white;
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #00c4b4 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 0;
 }
 
-.btn-secondary:hover {
-  background: #545b62;
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Features Section */
+.features {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.features .grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+.features .col-4 {
+  grid-column: span 4;
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.features .col-4:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* CTA Section */
+.cta {
+  background: var(--light-gray);
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.cta h2 {
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  margin-bottom: 2rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 0;
+}
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
   display: block;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.75rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
   font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
-/* css/style.css (updated) */
-:root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --accent-color: #28a745;
-  --text-color: #333;
-  --background-color: #f8f9fa;
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
 }
 
-body {
-  font-family: 'Open Sans', Arial, sans-serif;
-  color: var(--text-color);
-  background: var(--background-color);
-  line-height: 1.6;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-p {
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
   font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
 }
 
-/* Update previous button styles to use variables */
 .btn-primary {
   background: var(--primary-color);
-  color: white;
+  color: var(--white);
 }
 
 .btn-primary:hover {
-  background: darken(var(--primary-color), 10%);
+  background: #0056b3;
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
   background: var(--secondary-color);
-  color: white;
+  color: var(--white);
 }
 
 .btn-secondary:hover {
-  background: darken(var(--secondary-color), 10%);
+  background: #545b62;
+  transform: translateY(-2px);
 }
 
-/* css/style.css (updated) */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* Footer */
+footer {
+  background: var(--text-color);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 0;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-.col-4 {
-  grid-column: span 4;
+footer a:hover {
+  text-decoration: underline;
 }
 
-.col-6 {
-  grid-column: span 6;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .grid {
+  .features .grid {
     grid-template-columns: 1fr;
   }
 
-  .col-4, .col-6 {
+  .features .col-4 {
     grid-column: span 12;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
   }
 
   nav ul {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
 }
 
-/* css/style.css (updated for active nav link) */
-nav a.active {
-  font-weight: bold;
-  border-bottom: 2px solid var(--primary-color);
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
